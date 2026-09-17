@@ -14,8 +14,8 @@
   --energy: 0;
 }
 * { box-sizing: border-box; }
-html { overflow-x: hidden; }
-body { overflow-x: hidden; }
+html { overflow-x: clip; }
+body { overflow-x: clip; }
 body {
   margin: 0;
   background:
@@ -134,7 +134,7 @@ footer img { width: 36px; height: 36px; mix-blend-mode: lighten; }
 .avatar img { width: 118px; height: 118px; object-fit: contain; }
 .plan .btn { margin: 0 20px 24px; justify-content: center; }
 .wa-float {
-  position: fixed; right: 16px; bottom: 16px; z-index: 60;
+  position: fixed; right: 16px; bottom: 16px; z-index: 80;
   width: 56px; height: 56px; border-radius: 50%;
   display: grid; place-items: center;
   background: var(--primary); color: #111;
@@ -196,8 +196,7 @@ h1 span { animation: title-glow 2.8s ease-in-out infinite; }
 @keyframes eq { 0%,100% { transform: scaleY(.35);} 50% { transform: scaleY(1);} }
 h1 span { animation: title-glow 2.8s ease-in-out infinite, flicker 5.5s step-end infinite; }
 .btn { background-image: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.38) 50%, transparent 65%); background-size: 220% 100%; animation: neon-breathe 2.4s ease-in-out infinite, shine-x 2.8s linear infinite; }
-section { animation: reveal-up .8s ease both; animation-timeline: view(); animation-range: entry 0% entry 35%; }
-#inicio { animation: reveal-up .9s ease both; animation-timeline: auto; }
+#inicio { animation: reveal-up .9s ease both; }
 .eq { display:flex; align-items:flex-end; gap:5px; height:36px; margin-left:16px; }
 .eq span { display:block; width:4px; height:100%; border-radius:99px; background: var(--primary, #c8ff00); box-shadow: 0 0 10px rgba(200,255,0,.7); transform-origin:bottom; animation: eq .7s ease-in-out infinite; }
 .eq span:nth-child(2){ animation-duration:.84s }
