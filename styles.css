@@ -47,9 +47,10 @@ nav a { color: #d8d8d8; text-decoration: none; font-size: 14px; }
 main { position: relative; z-index: 10; }
 section { padding: 72px 6vw; }
 .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 72px; }
-.logo-row { display: flex; align-items: center; gap: 22px; margin-bottom: 24px; }
-.logo-beat { width: 140px; height: 140px; object-fit: contain; mix-blend-mode: lighten; }
-.wordmark { margin: 0; font-size: 52px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; line-height: .88; }
+.logo-full { width: min(520px, 100%); display: block; margin-bottom: 24px; }
+.feat { width: 100%; max-height: 480px; object-fit: cover; object-position: top; border-radius: 16px; margin-bottom: 10px; }
+.ig-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+.ig-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; background: #111; }
 #play {
   width: 64px; height: 64px; border-radius: 50%; border: 0; cursor: pointer;
   background: var(--primary); color: var(--ink); font-size: 20px;
