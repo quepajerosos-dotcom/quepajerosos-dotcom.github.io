@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DA Community Management</title>
+  <meta name="description" content="Community Manager en Mendoza. Contenido estratégico, redes activas y marcas presentes todos los días." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta property="og:title" content="DA Community Management" />
+  <meta property="og:image" content="./og.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="viz" aria-hidden="true"></canvas>
+  <div class="pulse-grid" aria-hidden="true"></div>
+
+  <header>
+    <a class="brand" href="#inicio" aria-label="DA Community Management">
+      <img src="./assets/logo-mark.jpg" alt="" />
+      <span>Community<br />Management</span>
+    </a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#metodo">Método</a>
+      <a href="#redes">Redes</a>
+      <a href="#piezas">Piezas</a>
+      <a href="#servicios" class="btn">Servicios</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="logo-row">
+        <img class="logo-beat" src="./assets/logo-mark.jpg" alt="" />
+        <p class="wordmark">Community<br />Management</p>
+      </div>
+      <div class="player">
+        <button id="play" type="button" aria-label="Reproducir">▶</button>
+        <div class="player-meta">
+          <div class="player-top">
+            <b id="playLabel">Play</b>
+            <canvas id="mini" width="160" height="28"></canvas>
+          </div>
+          <div class="bar"><i id="prog"></i></div>
+        </div>
+      </div>
+      <p class="kicker">Community Manager · Mendoza · Contenido que vende</p>
+      <h1>Hago que tu marca<br /><span>se vea</span> y se compre.</h1>
+      <p class="lead">Feeds que se entienden. Stories todos los días. Reels que paran el scroll. La marca presente cuando el cliente necesita comprar.</p>
+      <div class="cta">
+        <a class="btn" href="#redes">Ver redes que manejo</a>
+        <a class="btn ghost" href="#servicios">Servicios</a>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="track"><span>● REELS ● STORIES ● WHATSAPP ● FEEDS ● TENDENCIAS ● COMUNIDAD ● REELS ● STORIES ● WHATSAPP ● FEEDS ● TENDENCIAS ● COMUNIDAD</span></div></div>
+
+    <section>
+      <span class="tag">Introducción</span>
+      <h2>Presencia digital que vende</h2>
+      <p class="lead">En un mercado cada vez más digital, las redes son la vidriera, el catálogo y el primer contacto. Creo contenido alineado a cada marca para comunicar qué vende, generar confianza y derivar a WhatsApp.</p>
+    </section>
+
+    <section id="metodo">
+      <div class="lime-block">
+        <h2>Enfoque estratégico</h2>
+        <p>Mostrar lo que la marca vende de manera simple, visual y repetitiva. En redes, la claridad vende más que la creatividad excesiva.</p>
+      </div>
+    </section>
+
+    <section id="redes">
+      <span class="tag">Cuentas activas</span>
+      <h2>Redes que manejo</h2>
+      <p class="muted">Cada cuenta con su feed, reels y tablero semanal.</p>
+
+      <article class="card">
+        <header class="card-h"><div><h3>Esto es México</h3><p class="lime">@estoesmexicopicante</p></div><a class="btn ghost" href="https://www.instagram.com/estoesmexicopicante" target="_blank" rel="noopener">Ver Instagram</a></header>
+        <div class="media">
+          <video src="./accounts/mexico/reel.mp4" poster="./accounts/mexico/01.jpg" controls playsinline muted loop></video>
+          <div class="grid4">
+            <img src="./accounts/mexico/01.jpg" alt="Kit para armar tacos" />
+            <img src="./accounts/mexico/02.jpg" alt="Fajitas al disco" />
+            <img src="./accounts/mexico/03.jpg" alt="Nachos cargados" />
+            <img src="./accounts/mexico/04.jpg" alt="Tacos al pastor" />
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <header class="card-h"><div><h3>Masoero Asociados</h3><p class="lime">@maso.erocontable</p></div><a class="btn ghost" href="https://www.instagram.com/maso.erocontable" target="_blank" rel="noopener">Ver Instagram</a></header>
+        <div class="media">
+          <video src="./accounts/masoero/reel.mp4" poster="./accounts/masoero/01.jpg" controls playsinline muted loop></video>
+          <div class="grid4">
+            <img src="./accounts/masoero/01.jpg" alt="Pieza SIACE / ARCA" />
+            <img src="./accounts/masoero/02.jpg" alt="Estudio en acción" />
+            <img src="./accounts/masoero/03.jpg" alt="Alerta de umbrales" />
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <header class="card-h"><div><h3>Plagio MZA</h3><p class="lime">@plagio.mza</p></div><a class="btn ghost" href="https://www.instagram.com/plagio.mza" target="_blank" rel="noopener">Ver Instagram</a></header>
+        <div class="media">
+          <video src="./accounts/plagio/reel.mp4" poster="./accounts/plagio/01.jpg" controls playsinline muted loop></video>
+          <div class="grid4">
+            <img src="./accounts/plagio/01.jpg" alt="Smash burger" />
+            <img src="./accounts/plagio/02.jpg" alt="Milanesa napolitana" />
+            <img src="./accounts/plagio/03.jpg" alt="Noche en el bar" />
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <header class="card-h"><div><h3>FreshPoint Deli</h3><p class="lime">@freshpointdeli</p></div><a class="btn ghost" href="https://www.instagram.com/freshpointdeli" target="_blank" rel="noopener">Ver Instagram</a></header>
+        <div class="media">
+          <video src="./accounts/freshpoint/reel.mp4" poster="./accounts/freshpoint/01.jpg" controls playsinline muted loop></video>
+          <div class="grid4">
+            <img src="./accounts/freshpoint/01.jpg" alt="Barra por kilo" />
+            <img src="./accounts/freshpoint/02.jpg" alt="Plato del día" />
+            <img src="./accounts/freshpoint/03.jpg" alt="Desayuno y merienda" />
+            <img src="./accounts/freshpoint/04.jpg" alt="Opciones vegetarianas" />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="piezas">
+      <span class="tag">Piezas</span>
+      <h2>Contenido que hago</h2>
+      <p class="muted">Reels, feeds y piezas de producto para cada marca.</p>
+    </section>
+
+    <section id="servicios" class="serv">
+      <span class="tag">Próximo paso</span>
+      <h2>Servicios</h2>
+      <p class="muted">Packs, modalidades y cómo arrancar. Esta sección la armamos en el siguiente paso.</p>
+      <a class="btn" href="https://www.instagram.com/estoesmexicopicante" target="_blank" rel="noopener">Hablemos</a>
+    </section>
+  </main>
+
+  <footer>
+    <img src="./assets/logo-mark.jpg" alt="" />
+    <p>DA Community Management · Mendoza</p>
+  </footer>
+  <script src="./app.js"></script>
+</body>
+</html>
