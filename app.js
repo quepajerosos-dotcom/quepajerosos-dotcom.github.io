@@ -6,6 +6,7 @@ let pending = false;
 
 function setUi(on) {
   playing = on;
+  if (!playBtn) return;
   playBtn.textContent = on ? "❚❚" : "▶";
   playBtn.setAttribute("aria-label", on ? "Pausa" : "Reproducir");
 }
@@ -41,15 +42,17 @@ if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
   document.head.appendChild(s);
 }
 
-playBtn.addEventListener("click", () => {
-  if (!player || typeof player.playVideo !== "function") {
-    pending = !pending;
-    setUi(pending);
-    return;
-  }
-  if (playing) player.pauseVideo();
-  else player.playVideo();
-});
+if (playBtn) {
+  playBtn.addEventListener("click", () => {
+    if (!player || typeof player.playVideo !== "function") {
+      pending = !pending;
+      setUi(pending);
+      return;
+    }
+    if (playing) player.pauseVideo();
+    else player.playVideo();
+  });
+}
 
 const verBtn = document.getElementById("ver-servicios");
 const planes = document.getElementById("planes");
@@ -63,3 +66,12 @@ if (location.hash === "#servicios") openPlanes();
 window.addEventListener("hashchange", () => {
   if (location.hash === "#servicios") openPlanes();
 });
+
+const menuBtn = document.getElementById("menu-btn");
+const siteHeader = document.querySelector("body > header");
+if (menuBtn && siteHeader) {
+  menuBtn.addEventListener("click", () => siteHeader.classList.toggle("open"));
+  siteHeader.querySelectorAll("nav a").forEach((a) => {
+    a.addEventListener("click", () => siteHeader.classList.remove("open"));
+  });
+}

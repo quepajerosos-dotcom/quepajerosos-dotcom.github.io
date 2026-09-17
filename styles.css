@@ -14,7 +14,8 @@
   --energy: 0;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { overflow-x: hidden; }
+body { overflow-x: hidden; }
 body {
   margin: 0;
   background:
@@ -24,14 +25,21 @@ body {
   color: var(--fg);
   font-family: Outfit, system-ui, sans-serif;
 }
-header {
+body > header {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 6vw;
-  background: rgba(10,10,10,.8);
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(10,10,10,.9);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(200,255,0,.14);
   box-shadow: 0 8px 28px rgba(200,255,0,.04);
+}
+#menu-btn {
+  display: none;
+  width: 44px; height: 44px; border-radius: 999px;
+  border: 1px solid rgba(200,255,0,.25);
+  background: transparent; color: var(--fg); font-size: 22px; cursor: pointer;
 }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; }
 .brand img { width: 44px; height: 44px; object-fit: contain; mix-blend-mode: lighten; }
@@ -82,16 +90,32 @@ h2 { font-size: clamp(28px, 4vw, 48px); margin: 0 0 20px; letter-spacing: -.03em
 .serv { text-align: center; border: 1px solid var(--line); border-radius: 28px; margin: 24px 6vw 40px; padding: 56px 24px; background: linear-gradient(#161616, #0a0a0a); }
 footer { display: flex; align-items: center; gap: 16px; padding: 32px 8vw; border-top: 1px solid var(--border); color: var(--muted); }
 footer img { width: 36px; height: 36px; mix-blend-mode: lighten; }
-@media (max-width: 800px) {
-  nav { display: none; }
+@media (max-width: 900px) {
+  #menu-btn { display: grid; place-items: center; }
+  body > header { flex-wrap: wrap; }
+  body > header.open nav { display: flex; }
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0 12px;
+  }
+  header.open nav { display: flex; }
+  nav a { padding: 12px 4px; }
+  nav .btn { justify-content: center; }
+  .hero { min-height: auto; padding: 28px 16px 48px; }
+  .logo-full { max-width: 280px; }
+  h1 { font-size: 34px; }
+  .cta { flex-direction: column; }
+  .cta .btn { justify-content: center; }
   .wordmark { font-size: 28px; }
   .logo-beat { width: 88px; height: 88px; }
   .media { grid-template-columns: 1fr; }
+  .plans { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   .track, .logo-beat { animation: none; transform: none; }
-}
-logo-beat { animation: none; transform: none; }
 }
 .plans { display: grid; gap: 18px; margin-top: 32px; }
 @media (min-width: 900px) { .plans { grid-template-columns: 1fr 1fr 1fr; } }
