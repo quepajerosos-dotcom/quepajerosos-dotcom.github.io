@@ -50,3 +50,16 @@ playBtn.addEventListener("click", () => {
   if (playing) player.pauseVideo();
   else player.playVideo();
 });
+
+const verBtn = document.getElementById("ver-servicios");
+const planes = document.getElementById("planes");
+function openPlanes() {
+  if (!planes) return;
+  planes.hidden = false;
+  if (verBtn) verBtn.hidden = true;
+}
+if (verBtn) verBtn.addEventListener("click", openPlanes);
+if (location.hash === "#servicios") openPlanes();
+window.addEventListener("hashchange", () => {
+  if (location.hash === "#servicios") openPlanes();
+});
