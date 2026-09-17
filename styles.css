@@ -142,3 +142,51 @@ footer img { width: 36px; height: 36px; mix-blend-mode: lighten; }
   box-shadow: 0 0 22px rgba(200,255,0,.28);
 }
 .wa-float svg { width: 28px; height: 28px; fill: currentColor; }
+@keyframes neon-breathe {
+  0%, 100% { box-shadow: 0 0 16px rgba(200,255,0,.28), 0 0 40px rgba(200,255,0,.12); }
+  50% { box-shadow: 0 0 28px rgba(200,255,0,.7), 0 0 70px rgba(200,255,0,.28); }
+}
+@keyframes title-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(200,255,0,.45), 0 0 28px rgba(200,255,0,.22); }
+  50% { text-shadow: 0 0 18px rgba(200,255,0,1), 0 0 48px rgba(200,255,0,.55); }
+}
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0,0) scale(1); opacity:.55; }
+  50% { transform: translate(-6%,8%) scale(1.18); opacity:.95; }
+}
+@keyframes ping-ring {
+  0% { transform: scale(1); opacity:.55; }
+  100% { transform: scale(1.85); opacity: 0; }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes scan {
+  from { background-position: 0 0; }
+  to { background-position: 0 72px; }
+}
+body::before, body::after {
+  content: ""; pointer-events: none; position: fixed; z-index: 0; border-radius: 999px; filter: blur(40px);
+}
+body::before {
+  top: -12%; right: -8%; width: 46vw; height: 46vw;
+  background: rgba(200,255,0,.14); animation: blob-drift 9s ease-in-out infinite;
+}
+body::after {
+  bottom: -16%; left: -10%; width: 42vw; height: 42vw;
+  background: rgba(200,255,0,.1); animation: blob-drift 11s ease-in-out infinite reverse;
+}
+h1 span { animation: title-glow 2.8s ease-in-out infinite; }
+.btn, #play, .wa-float, .orb { animation: neon-breathe 2.4s ease-in-out infinite; }
+.wa-float { animation: neon-breathe 2s ease-in-out infinite, floaty 3.2s ease-in-out infinite; }
+.wa-float::before, .wa-float::after {
+  content: ""; position: absolute; inset: -4px; border-radius: inherit;
+  border: 2px solid rgba(200,255,0,.55); animation: ping-ring 1.8s ease-out infinite;
+}
+.wa-float { position: fixed; }
+.wa-float::after { animation-delay: .7s; }
+.logo-full, .avatar { animation: floaty 4.5s ease-in-out infinite; }
+.card, .plan, .about { transition: transform .25s ease, box-shadow .25s ease; box-shadow: 0 0 0 1px rgba(200,255,0,.16), 0 0 28px rgba(200,255,0,.1); }
+.card:hover, .plan:hover, .about:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(200,255,0,.4), 0 12px 40px rgba(200,255,0,.18); }
+.track { animation: mq 12s linear infinite; }
