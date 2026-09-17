@@ -190,3 +190,19 @@ h1 span { animation: title-glow 2.8s ease-in-out infinite; }
 .card, .plan, .about { transition: transform .25s ease, box-shadow .25s ease; box-shadow: 0 0 0 1px rgba(200,255,0,.16), 0 0 28px rgba(200,255,0,.1); }
 .card:hover, .plan:hover, .about:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(200,255,0,.4), 0 12px 40px rgba(200,255,0,.18); }
 .track { animation: mq 12s linear infinite; }
+@keyframes shine-x { from { background-position: 140% 0; } to { background-position: -40% 0; } }
+@keyframes flicker { 0%,19%,21%,23%,80%,100% { opacity:1; } 20%,22% { opacity:.55; } }
+@keyframes reveal-up { from { opacity:0; transform: translateY(28px);} to { opacity:1; transform:none;} }
+@keyframes eq { 0%,100% { transform: scaleY(.35);} 50% { transform: scaleY(1);} }
+h1 span { animation: title-glow 2.8s ease-in-out infinite, flicker 5.5s step-end infinite; }
+.btn { background-image: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.38) 50%, transparent 65%); background-size: 220% 100%; animation: neon-breathe 2.4s ease-in-out infinite, shine-x 2.8s linear infinite; }
+section { animation: reveal-up .8s ease both; animation-timeline: view(); animation-range: entry 0% entry 35%; }
+#inicio { animation: reveal-up .9s ease both; animation-timeline: auto; }
+.eq { display:flex; align-items:flex-end; gap:5px; height:36px; margin-left:16px; }
+.eq span { display:block; width:4px; height:100%; border-radius:99px; background: var(--primary, #c8ff00); box-shadow: 0 0 10px rgba(200,255,0,.7); transform-origin:bottom; animation: eq .7s ease-in-out infinite; }
+.eq span:nth-child(2){ animation-duration:.84s }
+.eq span:nth-child(3){ animation-duration:.52s }
+.eq span:nth-child(4){ animation-duration:.76s }
+.eq span:nth-child(5){ animation-duration:.58s }
+.eq span:nth-child(6){ animation-duration:.9s }
+.player-row { display:flex; align-items:center; }

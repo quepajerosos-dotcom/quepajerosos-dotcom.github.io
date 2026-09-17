@@ -9,6 +9,8 @@ function setUi(on) {
   if (!playBtn) return;
   playBtn.textContent = on ? "❚❚" : "▶";
   playBtn.setAttribute("aria-label", on ? "Pausa" : "Reproducir");
+  const row = document.getElementById("player-row");
+  if (row) row.classList.toggle("is-on", on);
 }
 
 window.onYouTubeIframeAPIReady = function () {
