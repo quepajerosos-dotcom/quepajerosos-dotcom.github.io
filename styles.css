@@ -217,3 +217,26 @@ section:not(#inicio) { content-visibility: auto; contain-intrinsic-size: auto 76
 .eq span:nth-child(6){ animation-duration:.9s }
 .player-row { display:flex; align-items:center; }
 .eq-wrap:not(.is-on) .eq span { animation-play-state: paused; transform: scaleY(.28); opacity:.5; }
+
+/* 120fps compositor pass */
+.btn, #play, .wa-float, .orb, .card, .plan, .about { animation: none !important; }
+.logo-full, .avatar, .wa-float, .orb {
+  animation: floaty120 3.2s linear infinite !important;
+  will-change: transform;
+}
+@keyframes floaty120 {
+  0%,100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,-8px,0); }
+}
+@keyframes shine120 {
+  from { transform: translate3d(-130%,0,0); }
+  to { transform: translate3d(130%,0,0); }
+}
+.btn { position: relative; overflow: hidden; }
+.btn::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 42%, rgba(255,255,255,.42) 50%, transparent 58%);
+  animation: shine120 2.4s linear infinite;
+}
+.card:hover, .plan:hover, .about:hover { transform: translate3d(0,-4px,0); }
+body::before, body::after { filter: none !important; will-change: transform, opacity; }
